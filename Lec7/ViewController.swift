@@ -23,7 +23,8 @@ class ViewController: UIViewController {
         let no = UIAlertAction(title: "No!, Abort", style: UIAlertActionStyle.cancel) { (btn) in
             print("MIssiles Lunch Aborted")
         }
-        //*** assign the POSITIVE BUtton we've just created to the DialogController
+        
+        //*** assign the POSITIVE \ Negetive BUttons we've just created to the DialogController
         alertCtrl.addAction(yes)
         alertCtrl.addAction(no)
         
