@@ -20,8 +20,12 @@ class ViewController: UIViewController {
             print("Ok was Clicked")
         }
         
+        let no = UIAlertAction(title: "No!, Abort", style: UIAlertActionStyle.cancel) { (btn) in
+            print("MIssiles Lunch Aborted")
+        }
         //*** assign the POSITIVE BUtton we've just created to the DialogController
         alertCtrl.addAction(yes)
+        alertCtrl.addAction(no)
         
         //*** present it- when a ViewController wants to present another ViewController
         self.present(alertCtrl, animated: true)
