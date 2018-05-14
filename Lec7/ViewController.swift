@@ -13,7 +13,29 @@ class ViewController: UIViewController {
     @IBOutlet weak var textFieldAdress: UITextField!
     @IBOutlet weak var textFieldAge: UITextField!
     
+    @IBAction func vv(_ sender: Any) {
+        textFieldAdress.resignFirstResponder()
+        textFieldAge.resignFirstResponder()
+    }
     
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        textFieldAdress.resignFirstResponder()
+        textFieldAge.resignFirstResponder()
+        
+        dismissKeyboard(v: view)
+    }
+    
+    func dismissKeyboard(v: UIView) {
+        v.subviews.forEach { (v) in
+            if let tf = v as? UITextField{
+                tf.resignFirstResponder()
+            }
+            else{
+                dismissKeyboard(v: v)
+            }
+        }
+    }
     // *** we gave an id to the segue
     // ** we want to prepere to the segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
