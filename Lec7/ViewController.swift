@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var showOtherPageBtn: UIButton!
     @IBOutlet weak var textFieldAdress: UITextField!
     @IBOutlet weak var textFieldAge: UITextField!
     
@@ -117,6 +118,7 @@ class ViewController: UIViewController {
         dest.age = ageTxt
         
         
+        
         //********************************
         
         
@@ -164,7 +166,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -172,7 +173,23 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "adressSegue" {
+            guard let txt1 = textFieldAdress.text , let txt2 = textFieldAge.text else {print("please provide both fields"); return false}
+            if txt1 == "" || txt2 == "" {
+                print("please provide both fields")
+                return false
+            } else {
+                // valid input
+                return true
+            }
+            
+        // All other Segues
+        } else {
+            return true
+        }
+        
+    }
 
 }
 

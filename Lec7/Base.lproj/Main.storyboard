@@ -77,6 +77,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="V2t-Y1-2de"/>
                     <connections>
+                        <outlet property="showOtherPageBtn" destination="uxD-Bp-SYm" id="Oby-6I-fXt"/>
                         <outlet property="textFieldAdress" destination="CRT-Pi-i4T" id="kWn-ix-uOa"/>
                         <outlet property="textFieldAge" destination="8oC-1P-iss" id="TMP-Ua-ikc"/>
                     </connections>
