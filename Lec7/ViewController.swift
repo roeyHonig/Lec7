@@ -107,10 +107,10 @@ class ViewController: UIViewController {
         
         //********************************   way #3
         // most most beutifull wat
-        guard let dest = segue.destination as? ViewControllerCustom,
-            segue.identifier == "adressSegue",
-            let txt = textFieldAdress.text,
-            let ageTxt = textFieldAge.text else {
+        guard let dest = segue.destination as? ViewControllerCustom, // destiation type correct
+            segue.identifier == "adressSegue",                       // correct segue
+            let txt = textFieldAdress.text,                          // adress text field is not empthy
+            let ageTxt = textFieldAge.text else {                    // aged text field is not emphty
             return
         }
         dest.adress = txt
